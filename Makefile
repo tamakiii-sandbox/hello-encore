@@ -6,6 +6,7 @@ help:
 setup: \
 	vendor \
 	node_modules \
+	.env.local \
 	build
 
 build: Dockerfile
@@ -22,6 +23,9 @@ vendor:
 
 node_modules:
 	npm install --dev
+
+.env.local:
+	echo 'DATABASE_URL="mysql://root:password@mysql:3306/mysql?serverVersion=5.7"' > $@
 
 clean:
 	docker-compose down -v
