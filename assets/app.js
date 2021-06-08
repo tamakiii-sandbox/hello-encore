@@ -18,6 +18,8 @@ import jquery from 'jquery';
 // ./ (or ../) means to look for a local file
 import greet from './greet';
 
+const $ = jquery;
+
 $(document).ready(function() {
     $('body').prepend('<h1>'+greet('jill')+'</h1>');
 });
